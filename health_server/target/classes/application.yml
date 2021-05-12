@@ -1,0 +1,36 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/health_server?serverTimezone=Hongkong
+    username: root
+    password:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 330800
+  data:
+    redis:
+      repositories:
+        enabled: false
+  jackson:
+    time-zone: GMT+8
+  resources:
+    add-mappings: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapperxml/*.xml
+wechat:
+  appid: wxdccc706101e815e2
+  secret: 7021269e9e483c0ee2e4f2af5cb6c53d
+jwt-config:
+  secret: zjutleo
+  expireTime: 600
+  refreshTokenExpireTime: 604800
+user-operation-log:
+  format: '[{}][{}][{}]'

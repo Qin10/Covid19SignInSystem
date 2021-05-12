@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zjutleo.health_server.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="cn.zjutleo.health_server.pojo.User">
+    <!--@mbg.generated-->
+    <!--@Table `user`-->
+    <id column="u_id" jdbcType="INTEGER" property="uId" />
+    <result column="u_nickname" jdbcType="VARCHAR" property="uNickname" />
+    <result column="u_gender" jdbcType="BOOLEAN" property="uGender" />
+    <result column="u_type_id" jdbcType="INTEGER" property="uTypeId" />
+    <result column="u_avatar_url" jdbcType="VARCHAR" property="uAvatarUrl" />
+    <result column="u_school" jdbcType="VARCHAR" property="uSchool" />
+    <result column="u_academy" jdbcType="VARCHAR" property="uAcademy" />
+    <result column="u_major" jdbcType="VARCHAR" property="uMajor" />
+    <result column="u_grade" jdbcType="INTEGER" property="uGrade" />
+    <result column="u_class" jdbcType="VARCHAR" property="uClass" />
+    <result column="u_stu_num" jdbcType="VARCHAR" property="uStuNum" />
+    <result column="u_true_name" jdbcType="VARCHAR" property="uTrueName" />
+    <result column="u_created_time" jdbcType="TIMESTAMP" property="uCreatedTime" />
+  </resultMap>
+  <resultMap id="VoResultMap" type="cn.zjutleo.health_server.vo.UserVo">
+    <id column="u_id" jdbcType="INTEGER" property="uId" />
+    <result column="u_nickname" jdbcType="VARCHAR" property="uNickname" />
+    <result column="u_gender" jdbcType="BOOLEAN" property="uGender" />
+    <result column="u_type_id" jdbcType="INTEGER" property="uTypeId" />
+    <result column="u_avatar_url" jdbcType="VARCHAR" property="uAvatarUrl" />
+    <result column="u_school" jdbcType="VARCHAR" property="uSchool" />
+    <result column="u_academy" jdbcType="VARCHAR" property="uAcademy" />
+    <result column="u_major" jdbcType="VARCHAR" property="uMajor" />
+    <result column="u_grade" jdbcType="INTEGER" property="uGrade" />
+    <result column="u_class" jdbcType="VARCHAR" property="uClass" />
+    <result column="u_stu_num" jdbcType="VARCHAR" property="uStuNum" />
+    <result column="u_true_name" jdbcType="VARCHAR" property="uTrueName" />
+    <result column="u_created_time" jdbcType="TIMESTAMP" property="uCreatedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    u_id, u_nickname, u_gender, u_type_id, u_avatar_url, u_school, u_academy, u_major, 
+    u_grade, u_class, u_stu_num, u_true_name, u_created_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from `user`
+    where u_id = #{uId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from `user`
+    where u_id = #{uId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="u_id" keyProperty="uId" parameterType="cn.zjutleo.health_server.pojo.User" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `user` (u_nickname, u_gender, u_type_id, 
+      u_avatar_url, u_school, u_academy, 
+      u_major, u_grade, u_class, 
+      u_stu_num, u_true_name, u_created_time
+      )
+    values (#{uNickname,jdbcType=VARCHAR}, #{uGender,jdbcType=BOOLEAN}, #{uTypeId,jdbcType=INTEGER}, 
+      #{uAvatarUrl,jdbcType=VARCHAR}, #{uSchool,jdbcType=VARCHAR}, #{uAcademy,jdbcType=VARCHAR}, 
+      #{uMajor,jdbcType=VARCHAR}, #{uGrade,jdbcType=INTEGER}, #{uClass,jdbcType=VARCHAR}, 
+      #{uStuNum,jdbcType=VARCHAR}, #{uTrueName,jdbcType=VARCHAR}, #{uCreatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="u_id" keyProperty="uId" parameterType="cn.zjutleo.health_server.pojo.User" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `user`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uNickname != null">
+        u_nickname,
+      </if>
+      <if test="uGender != null">
+        u_gender,
+      </if>
+      <if test="uTypeId != null">
+        u_type_id,
+      </if>
+      <if test="uAvatarUrl != null">
+        u_avatar_url,
+      </if>
+      <if test="uSchool != null">
+        u_school,
+      </if>
+      <if test="uAcademy != null">
+        u_academy,
+      </if>
+      <if test="uMajor != null">
+        u_major,
+      </if>
+      <if test="uGrade != null">
+        u_grade,
+      </if>
+      <if test="uClass != null">
+        u_class,
+      </if>
+      <if test="uStuNum != null">
+        u_stu_num,
+      </if>
+      <if test="uTrueName != null">
+        u_true_name,
+      </if>
+      <if test="uCreatedTime != null">
+        u_created_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uNickname != null">
+        #{uNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="uGender != null">
+        #{uGender,jdbcType=BOOLEAN},
+      </if>
+      <if test="uTypeId != null">
+        #{uTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="uAvatarUrl != null">
+        #{uAvatarUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="uSchool != null">
+        #{uSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="uAcademy != null">
+        #{uAcademy,jdbcType=VARCHAR},
+      </if>
+      <if test="uMajor != null">
+        #{uMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="uGrade != null">
+        #{uGrade,jdbcType=INTEGER},
+      </if>
+      <if test="uClass != null">
+        #{uClass,jdbcType=VARCHAR},
+      </if>
+      <if test="uStuNum != null">
+        #{uStuNum,jdbcType=VARCHAR},
+      </if>
+      <if test="uTrueName != null">
+        #{uTrueName,jdbcType=VARCHAR},
+      </if>
+      <if test="uCreatedTime != null">
+        #{uCreatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zjutleo.health_server.pojo.User">
+    <!--@mbg.generated-->
+    update `user`
+    <set>
+      <if test="uNickname != null">
+        u_nickname = #{uNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="uGender != null">
+        u_gender = #{uGender,jdbcType=BOOLEAN},
+      </if>
+      <if test="uTypeId != null">
+        u_type_id = #{uTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="uAvatarUrl != null">
+        u_avatar_url = #{uAvatarUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="uSchool != null">
+        u_school = #{uSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="uAcademy != null">
+        u_academy = #{uAcademy,jdbcType=VARCHAR},
+      </if>
+      <if test="uMajor != null">
+        u_major = #{uMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="uGrade != null">
+        u_grade = #{uGrade,jdbcType=INTEGER},
+      </if>
+      <if test="uClass != null">
+        u_class = #{uClass,jdbcType=VARCHAR},
+      </if>
+      <if test="uStuNum != null">
+        u_stu_num = #{uStuNum,jdbcType=VARCHAR},
+      </if>
+      <if test="uTrueName != null">
+        u_true_name = #{uTrueName,jdbcType=VARCHAR},
+      </if>
+      <if test="uCreatedTime != null">
+        u_created_time = #{uCreatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zjutleo.health_server.pojo.User">
+    <!--@mbg.generated-->
+    update `user`
+    set u_nickname = #{uNickname,jdbcType=VARCHAR},
+      u_gender = #{uGender,jdbcType=BOOLEAN},
+      u_type_id = #{uTypeId,jdbcType=INTEGER},
+      u_avatar_url = #{uAvatarUrl,jdbcType=VARCHAR},
+      u_school = #{uSchool,jdbcType=VARCHAR},
+      u_academy = #{uAcademy,jdbcType=VARCHAR},
+      u_major = #{uMajor,jdbcType=VARCHAR},
+      u_grade = #{uGrade,jdbcType=INTEGER},
+      u_class = #{uClass,jdbcType=VARCHAR},
+      u_stu_num = #{uStuNum,jdbcType=VARCHAR},
+      u_true_name = #{uTrueName,jdbcType=VARCHAR},
+      u_created_time = #{uCreatedTime,jdbcType=TIMESTAMP}
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectVoByPrimaryKey" parameterType="java.lang.Integer" resultMap="VoResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from `user`
+    where u_id = #{id}
+  </select>
+
+  <select id="selectIdById" resultType="java.lang.Integer">
+    select u_id
+    from `user`
+    where u_id = #{id}
+    limit 1
+  </select>
+</mapper>

@@ -1,0 +1,54 @@
+{
+  "groups": [
+    {
+      "name": "jwt-config",
+      "type": "cn.zjutleo.health_server.config.JwtConfig",
+      "sourceType": "cn.zjutleo.health_server.config.JwtConfig"
+    },
+    {
+      "name": "user-operation-log",
+      "type": "cn.zjutleo.health_server.config.UserOperationLogConfig",
+      "sourceType": "cn.zjutleo.health_server.config.UserOperationLogConfig"
+    },
+    {
+      "name": "wechat",
+      "type": "cn.zjutleo.health_server.config.WechatConfig",
+      "sourceType": "cn.zjutleo.health_server.config.WechatConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jwt-config.expire-time",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.zjutleo.health_server.config.JwtConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "jwt-config.refresh-token-expire-time",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.zjutleo.health_server.config.JwtConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "jwt-config.secret",
+      "type": "java.lang.String",
+      "sourceType": "cn.zjutleo.health_server.config.JwtConfig"
+    },
+    {
+      "name": "user-operation-log.format",
+      "type": "java.lang.String",
+      "sourceType": "cn.zjutleo.health_server.config.UserOperationLogConfig"
+    },
+    {
+      "name": "wechat.appid",
+      "type": "java.lang.String",
+      "sourceType": "cn.zjutleo.health_server.config.WechatConfig"
+    },
+    {
+      "name": "wechat.secret",
+      "type": "java.lang.String",
+      "sourceType": "cn.zjutleo.health_server.config.WechatConfig"
+    }
+  ],
+  "hints": []
+}
