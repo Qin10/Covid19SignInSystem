@@ -11,11 +11,12 @@ Page({
     wx.login({
       success (res) {
         if (res.code) {
-          console.log(res.code)
+          // console.log(res.code)
+          let rst = res.code;
           //发起网络请求
           wx.request({
             // url: 'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&grant_type=authorization_code&js_code=JSCODE',
-            // url: 'http://127.0.0.1:8089/wx/login',
+            url: 'http://localhost:8089/login/wechat?code='+rst,
             method: 'POST',
             header: {
               'content-type': 'application/x-www-form-urlencoded'

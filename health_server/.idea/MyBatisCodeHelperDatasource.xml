@@ -24,6 +24,8 @@
                   <option name="javaMapperPath" value="C:\Users\秦政瀚\Desktop\SignInSystem\health_server\src\main\java\cn\zjutleo\health_server\mapper" />
                   <option name="javaModelPacakge" value="cn.zjutleo.health_server.pojo" />
                   <option name="javaModelPath" value="C:\Users\秦政瀚\Desktop\SignInSystem\health_server\src\main\java\cn\zjutleo\health_server\pojo" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/src/main/java" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/src/main/java" />
                   <option name="xmlPackage" value="mapperxml" />
                   <option name="xmlPath" value="C:\Users\秦政瀚\Desktop\SignInSystem\health_server\src\main\resources\mapperxml" />
                 </UserPackageAndPathInfoByModule>
