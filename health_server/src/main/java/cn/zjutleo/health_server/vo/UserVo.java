@@ -66,4 +66,6 @@ public class UserVo {
     * 账户首次登录时间
     */
     private Date uCreatedTime;
+
+
 }

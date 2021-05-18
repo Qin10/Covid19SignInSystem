@@ -53,3 +53,20 @@ DEFAULT CHARACTER SET = utf8mb4;
 
 INSERT INTO `timecard` (`u_id`, `datetime`, `province`, `city`, `county`, `temperature`, `healthcode`) 
 VALUES ('10001', '2021-05-12 07:22:14', '浙江省', '杭州市', '西湖区', '36.4', '绿码');
+
+{
+  "uId": 10001,
+  "uNickname": "patricy",
+  "uGender": true,
+  "uTypeId": 0,
+  "uAvatarUrl": "/home",
+  "uSchool": "浙江工业大学",
+  "uAcademy": "计算机",
+  "uMajor": "软外",
+  "uGrade": 2019,
+  "uClass": "软外1903",
+  "uStuNum": "201906150312",
+  "uTrueName": "秦政瀚",
+  "uCreatedTime": "2021-05-17 07:56:15"
+}
+

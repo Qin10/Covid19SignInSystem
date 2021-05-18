@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/health_server?serverTimezone=Hongkong
+    url: jdbc:mysql://127.0.0.1:3306/health_server?serverTimezone=Hongkong&characterEncoding=utf8
     username: root
     password:
   redis:
@@ -29,8 +29,8 @@ wechat:
   appid: wxdccc706101e815e2
   secret: 7021269e9e483c0ee2e4f2af5cb6c53d
 jwt-config:
-  secret: zjutleo
-  expireTime: 600
+  secret: zjutLeo001212leoPatricy
+  expireTime: 0x7fffffff
   refreshTokenExpireTime: 604800
 user-operation-log:
   format: '[{}][{}][{}]'

@@ -1,18 +1,25 @@
 package cn.zjutleo.health_server.service;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.zjutleo.health_server.dto.UserDto;
 import cn.zjutleo.health_server.exception.apiException.daoException.SelectException;
 import cn.zjutleo.health_server.mapper.UserMapper;
 import cn.zjutleo.health_server.pojo.User;
+import cn.zjutleo.health_server.vo.PageVo;
 import cn.zjutleo.health_server.vo.UserVo;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author : Qin Zhenghan
  * @date : Created in 2021/5/11
  * @description: 用户服务类
  */
+@Slf4j
 @Service
 public class UserService {
     @Resource
@@ -71,4 +78,20 @@ public class UserService {
     public boolean existsById(Integer userId) {
         return userId != null && userMapper.selectIdById(userId) != null;
     }
+
+    /**
+     * 根据用户id更新用户公有信息
+     *
+     * @param userDto
+     * @param userId
+     */
+    public void updateUserByUserId(UserDto userDto, Integer userId) throws SelectException {
+        log.info(userDto.toString());
+        log.info(String.valueOf(userId));
+        User user = new User();
+        BeanUtils.copyProperties(userDto, user);
+        user.setUId(userId);
+        userMapper.updateByUId(user, userId);
+    }
+
 }

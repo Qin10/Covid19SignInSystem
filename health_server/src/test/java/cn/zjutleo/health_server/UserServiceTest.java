@@ -1,5 +1,6 @@
 package cn.zjutleo.health_server;
 
+import cn.zjutleo.health_server.dto.UserDto;
 import cn.zjutleo.health_server.exception.apiException.daoException.SelectException;
 import cn.zjutleo.health_server.service.UserService;
 import cn.zjutleo.health_server.vo.UserVo;
@@ -20,9 +21,5 @@ public class UserServiceTest {
     @Resource
     private UserService userService;
 
-    @Test
-    void getUserVoTest() throws SelectException {
-        UserVo userVo = userService.getExistUserVoById(10001);
-        log.info(userVo.toString());
-    }
+
 }

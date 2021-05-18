@@ -6,7 +6,6 @@ import cn.zjutleo.health_server.constants.OauthTypes;
 import cn.zjutleo.health_server.constants.RedisConstants;
 import cn.zjutleo.health_server.dto.JwtPayloadDto;
 import cn.zjutleo.health_server.dto.WechatRegisterUserDto;
-import cn.zjutleo.health_server.exception.apiException.AuthenticationException;
 import cn.zjutleo.health_server.exception.apiException.AuthorizationException;
 import cn.zjutleo.health_server.exception.apiException.daoException.SelectException;
 import cn.zjutleo.health_server.pojo.Oauth;

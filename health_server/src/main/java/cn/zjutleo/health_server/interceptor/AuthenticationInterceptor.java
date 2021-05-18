@@ -15,6 +15,7 @@ import cn.zjutleo.health_server.util.IpUtil;
 import cn.zjutleo.health_server.util.JwtUtil;
 import cn.zjutleo.health_server.util.ThreadLocalUtil;
 import com.auth0.jwt.exceptions.TokenExpiredException;
+import lombok.extern.slf4j.Slf4j;
 import org.jboss.logging.MDC;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -23,6 +24,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
@@ -32,6 +34,7 @@ import java.lang.reflect.Method;
  * @date : Created in 2021/5/12
  * @description: 鉴权拦截器
  */
+@Slf4j
 @Component
 public class AuthenticationInterceptor implements HandlerInterceptor {
     @Resource
@@ -39,8 +42,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     @Resource
     private JwtConfig jwtConfig;
 
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws AuthenticationException {
-        // 从http请求头中取出token(前端请求中在Authorization字段中附加token)
+        // 从http请求头中取出token(前端请求中在请求头Authorization字段中附加token)
         String token = request.getHeader("Authorization");
         // 若不是映射到方法则直接通过(Spring在对Controller进行注册时会遍历bean下的所有方法，对有映射的方法封装成HandlerMethod进行注册，同时也会注册相关的url等信息)
         if (!(handler instanceof HandlerMethod)) {

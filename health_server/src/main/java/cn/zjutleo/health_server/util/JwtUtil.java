@@ -30,7 +30,7 @@ public class JwtUtil {
             // 生成验证对象
             JWTVerifier verifier = JWT.require(algorithm)
                     .withClaim("id", jwtPayloadDto.getId())
-                    .withClaim("nickName", jwtPayloadDto.getNickname())
+                    .withClaim("nickname", jwtPayloadDto.getNickname())
                     .withClaim("typeId", jwtPayloadDto.getTypeId())
                     .withClaim("stuNum", jwtPayloadDto.getStuNum())
                     .build();
