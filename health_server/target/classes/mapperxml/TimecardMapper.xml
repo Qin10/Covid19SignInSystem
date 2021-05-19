@@ -8,7 +8,7 @@
         select * from timecard where to_days(datetime)>=(to_days(now())-#{days}) and u_id=#{u_id}
     </select>
     <select id="findTimecardsBySchoolInfoOnToday" resultType="cn.zjutleo.health_server.pojo.Timecard">
-        select * from timecard where to_days(datetime)>=(to_days(now())-#{days}) and u_id in
+        select * from timecard where to_days(datetime)=to_days(now()) and u_id in
         (select u_id from user where u_school=#{school}
         <if test="academy!=null">
             and u_academy=#{academy}
