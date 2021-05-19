@@ -4,13 +4,17 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/health_server?serverTimezone=Hongkong&characterEncoding=utf8
+    # url: jdbc:mysql://127.0.0.1:3306/health_server?serverTimezone=Hongkong
+    url: jdbc:mysql://127.0.0.1:3306/signinsystem?serverTimezone=Hongkong&useUnicode=true&characterEncoding=UTF-8
     username: root
-    password:
+    # password:
+    password: 12345
+
   redis:
     host: 127.0.0.1
     port: 6379
-    password: 330800
+    # password: 330800
+    password: 
   data:
     redis:
       repositories:
@@ -29,8 +33,8 @@ wechat:
   appid: wxdccc706101e815e2
   secret: 7021269e9e483c0ee2e4f2af5cb6c53d
 jwt-config:
-  secret: zjutLeo001212leoPatricy
-  expireTime: 0x7fffffff
+  secret: zjutleo
+  expireTime: 600
   refreshTokenExpireTime: 604800
 user-operation-log:
   format: '[{}][{}][{}]'

@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -66,7 +66,7 @@ public class TimecardController {
             String province=(String)map.get("province");
             String city=(String)map.get("city");
             String county=(String) map.get("county");
-            String detailLocation=(String) map.get("detailLocaiton");
+            String detailLocation=(String) map.get("detailLocation");
             Float temperature=((Double)map.get("temperature")).floatValue();
             String healthcode=(String) map.get("healthcode");
             Timecard timecard = new Timecard(u_id,datetime,province,city,county,detailLocation,temperature,healthcode);
