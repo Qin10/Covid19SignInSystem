@@ -1,0 +1,200 @@
+/* pages/mainPage.wxss */
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.userinfor{
+  background:#769;
+  color:#aaa;
+  display: flex;
+  flex-direction: 1;
+}
+
+.UserId{
+  margin-top:0px;
+  color:rgb(230, 227, 227);
+  font-size:12px;
+}
+
+.placeWhere{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10%;
+  
+}
+
+.atView{
+  background-color:rgb(47, 133, 219);
+  height: 150px;
+  width:  150px;
+  border-radius: 50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.dataTime{
+  color: rgb(209, 204, 204);
+  padding-top:10px;
+  margin-left:50px;
+  display: flex;
+  flex-direction: column;
+  font-size:10px;
+}
+
+.MonDay{
+  padding-left: 10px;
+}
+
+.SelfIntroBox{
+  color:white;
+  background-color: #769;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 20%;
+}
+
+.userNick{
+  float: left;
+}
+
+.userHead {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  /* margin: 20rpx; */
+  background-color: #769;
+  border-radius: 20%;
+}
+
+.itemImage{
+  width: 30px;
+  height: 30px;
+}
+
+.attencePoint{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.item{
+  width: 100%;
+  text-align: center;
+  /* margin-top: 12px; */
+  background:white;
+  /* margin-bottom: 3%; */
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.centreItemText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.mapView{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+map{
+  width: 80%;
+}
+
+.iconTarget{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 45%;
+}
+
+.itemText{
+  font-weight: 500;
+}
+
+.mapView{
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: 3%;
+  width: 90%;
+  height: 150rpx;
+}
+
+.checkPastBView{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.NameInBlock{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 4%;
+}
+
+.NameAndDept{
+  margin-top: 1%;
+}
+
+.attencePage{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 1000rpx;
+  width: 90%;
+  background-color: white;
+  border-radius: 2%;
+}
+
+.checkCase{
+  display: flex;
+  flex-direction: column;
+  background-color:rgb(233, 232, 232);
+  height: 600px;
+  width: 100%;
+  justify-content: start;
+}
+
+.nameBlock{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: rgb(30, 144, 240);
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  border-radius: 20%;
+}
+
+.InformationItem{
+  display: flex;
+  margin-bottom: 0px;
+  flex-direction: column;
+  background-color: rgb(233, 232, 232);
+  height: 100%;
+}

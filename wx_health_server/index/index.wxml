@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view>
+      <open-data type="userNickName"></open-data>
+      </view>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" > 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class="registerForm">
+    <view class="formOne">
+     <form>
+        <text id="itemsInform">用户姓名：</text>
+        <input id="inputInform">{{userName}}</input>
+        <text id="itemsInform">用户ID：</text>
+        <input id="inputInform"></input>
+      </form>
+    </view>
+  </view>
+
+  <view class="usermotto">
+    <button bindtap="clickme" style="position: relative; left: 0rpx; top: 0rpx">登录</button>
+  </view>
+</view>
+<view class="tips">
+    <text>{{tipsMessage}}</text>
+</view>

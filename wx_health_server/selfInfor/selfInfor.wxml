@@ -1,0 +1,4 @@
+<!--pages/selfInfor/selfInfor.wxml-->
+<view class="selfIntroduce">
+  <text>good</text>
+</view>
