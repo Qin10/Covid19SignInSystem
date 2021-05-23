@@ -11,4 +11,9 @@ public class RedisConstants {
      */
     public static final String REFRESH_TOKEN_PREFIX = "user:token:";
 
+    /**
+     * 打卡缓存key
+     */
+    public static final String TIMECARD_CACHE_KEY = "timecard:cache:";
+
 }

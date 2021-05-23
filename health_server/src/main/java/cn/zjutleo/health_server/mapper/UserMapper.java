@@ -18,7 +18,6 @@ public interface UserMapper {
 //    int updateByPrimaryKeySelective(User record);
     int updateByUId(@Param("updated")User updated,@Param("uId")Integer uId);
 
-
     int updateByPrimaryKey(User record);
 
     UserVo selectVoByPrimaryKey(Integer id);
@@ -26,5 +25,7 @@ public interface UserMapper {
     Integer selectIdById(Integer id);
 
     List<UserVo> selectAll();
+
+    List<Integer> selectUId();
 
 }

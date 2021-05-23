@@ -7,6 +7,8 @@ import cn.zjutleo.health_server.mapper.UserMapper;
 import cn.zjutleo.health_server.pojo.User;
 import cn.zjutleo.health_server.vo.PageVo;
 import cn.zjutleo.health_server.vo.UserVo;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -92,6 +94,29 @@ public class UserService {
         BeanUtils.copyProperties(userDto, user);
         user.setUId(userId);
         userMapper.updateByUId(user, userId);
+    }
+
+    /**
+     * 获取所有用户id
+     *
+     * @return 所有用户id列表
+     */
+    public List<Integer> getAllUserId(){
+        return userMapper.selectUId();
+    }
+
+    /**
+     * 分页获取所有用户信息列表
+     *
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    public PageVo<List<UserVo>> getAllUserVoPageable(int pageNum, int pageSize){
+        PageHelper.startPage(pageNum, pageSize);
+        List<UserVo> userVos = userMapper.selectAll();
+        PageInfo<UserVo> pageInfo = new PageInfo<>(userVos);
+        return new PageVo<>(pageInfo.getPageNum(), pageInfo.getSize(), pageInfo.getList());
     }
 
 }

@@ -16,7 +16,8 @@ CREATE TABLE `user`(
     PRIMARY KEY (`u_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=10000 DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `user` VALUES (10001, 'leo', 1, 0, NULL, '浙江工业大学', '计算机', '软件工程（中外合作）', 2019, '软外1903班', '201906150366', '梅西', '2021-05-11 00:55:22');
+INSERT INTO `user` VALUES (10001, 'patricy', 1, 0, '/usr', '浙江大学', '软件学院', '软件工程', 2019, '软工1903', '201906150312', '秦政瀚', '2021-05-17 19:04:31');
+INSERT INTO `user` VALUES (10002, ' mike', 1, 1, NULL, '浙江工业大学', '计算机', '计算机科学与技术', 2018, '计科1901', '201906010135', 'C罗', '2021-05-16 22:40:03');
 
 DROP TABLE IF EXISTS `oauth`;
 CREATE TABLE `oauth` (
@@ -51,22 +52,4 @@ CREATE TABLE `timecard` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-INSERT INTO `timecard` (`u_id`, `datetime`, `province`, `city`, `county`, `temperature`, `healthcode`) 
-VALUES ('10001', '2021-05-12 07:22:14', '浙江省', '杭州市', '西湖区', '36.4', '绿码');
-
-{
-  "uId": 10001,
-  "uNickname": "patricy",
-  "uGender": true,
-  "uTypeId": 0,
-  "uAvatarUrl": "/home",
-  "uSchool": "浙江工业大学",
-  "uAcademy": "计算机",
-  "uMajor": "软外",
-  "uGrade": 2019,
-  "uClass": "软外1903",
-  "uStuNum": "201906150312",
-  "uTrueName": "秦政瀚",
-  "uCreatedTime": "2021-05-17 07:56:15"
-}
-
+INSERT INTO `timecard` VALUES (10001, '2021-05-12 07:22:14', '浙江省', '杭州市', '西湖区', 36.4, '绿码');

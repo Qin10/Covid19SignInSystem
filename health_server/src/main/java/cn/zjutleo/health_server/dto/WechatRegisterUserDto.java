@@ -14,7 +14,6 @@ public class WechatRegisterUserDto {
     /**
      * 昵称
      */
-    @NotEmpty(message = "昵称不能为空")
     private String nickname;
 
     /**

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zjutleo.health_server.mapper.TimecardMapper">
+    <select id="findTimecardByIdOnToday" resultType="cn.zjutleo.health_server.pojo.Timecard">
+        select * from timecard where to_days(datetime)=to_days(now()) and u_id=#{u_id}
+    </select>
+    <select id="findTimecardsSomeDaysAgoById" resultType="cn.zjutleo.health_server.pojo.Timecard">
+        select * from timecard where to_days(datetime)>=(to_days(now())-#{days}) and u_id=#{u_id}
+    </select>
+    <select id="findTimecardsBySchoolInfoOnToday" resultType="cn.zjutleo.health_server.pojo.Timecard">
+        select * from timecard where to_days(datetime)=to_days(now()) and u_id in
+        (select u_id from user where u_school=#{school}
+        <if test="academy!=null">
+            and u_academy=#{academy}
+        </if>
+        <if test="major!=null">
+            and u_major=#{major}
+        </if>
+        <if test="grade!=null">
+            and u_grade=#{grade}
+        </if>
+        <if test="classe!=null">
+            and u_class=#{classe}
+        </if>
+        )
+    </select>
+    <select id="findUsersNotSignInBySchoolInfoOnToday" parameterType="cn.zjutleo.health_server.pojo.SchoolInfo" resultType="cn.zjutleo.health_server.pojo.User">
+        select * from user where u_school=#{school}
+        <if test="academy!=null">
+            and u_academy=#{academy}
+        </if>
+        <if test="major!=null">
+            and u_major=#{major}
+        </if>
+        <if test="grade!=null">
+            and u_grade=#{grade}
+        </if>
+        <if test="classe!=null">
+            and u_class=#{classe}
+        </if>
+        and u_id in (select u_id from timecard where to_days(datetime)=to_days(now()))
+    </select>
+
+    <insert id="insert" parameterType="cn.zjutleo.health_server.pojo.SchoolInfo">
+        insert into timecard (u_id,datetime,province,city,county,detailLocation,temperature,healthcode) 
+        values(#{uId},#{datetime},#{province},#{city},#{county},#{detailLocation},#{temperature},#{healthcode})
+    </insert>
+</mapper>

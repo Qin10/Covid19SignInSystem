@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author : Qin Zhenghan
@@ -21,5 +22,12 @@ public class UserServiceTest {
     @Resource
     private UserService userService;
 
+    @Test
+    public void getAllId(){
+        List<Integer> userIdList = userService.getAllUserId();
+        for(Integer id : userIdList){
+            log.info(id.toString());
+        }
+    }
 
 }
