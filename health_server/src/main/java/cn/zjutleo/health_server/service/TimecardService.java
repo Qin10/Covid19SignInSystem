@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.zjutleo.health_server.exception.apiException.daoException.InsertException;
 import cn.zjutleo.health_server.mapper.TimecardMapper;
 import cn.zjutleo.health_server.pojo.SchoolInfo;
 import cn.zjutleo.health_server.pojo.Timecard;
@@ -51,10 +52,16 @@ public class TimecardService {
     
 
     //添加用户打卡到redis和mysql
-    public void insert(Timecard timecard){
-      
-        redisService.set("TimecardCache::"+timecard.getUId().toString(), timecard);
-        timecardMapper.insert(timecard);
+    public void insert(Timecard timecard) throws InsertException{
+        try{
+            timecardMapper.insert(timecard);
+            redisService.set("TimecardCache::"+timecard.getUId().toString(), timecard);
+        }catch(Exception e){
+            throw new InsertException();
+        }
+        
+        
+        
     }
     
     
