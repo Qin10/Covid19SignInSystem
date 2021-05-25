@@ -28,7 +28,7 @@ public class TimecardTask {
     /**
      * 每天零点清除当天打卡缓存
      */
-    @Scheduled(cron = "0 0 0 * * ?")
+    @Scheduled(cron = "5 * * * * ?")
     @Async
     public void deleteTimecardToday(){
         log.info("开始清除当天打卡缓存");

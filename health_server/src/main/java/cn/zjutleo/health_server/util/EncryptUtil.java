@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * @author : Qin Zhenghan
  * @date : Created in 2021/5/11
- * @description: SHA256散列加密
+ * @description: 加密解密工具类
  */
 public class EncryptUtil {
     /**

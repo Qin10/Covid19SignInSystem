@@ -2,19 +2,17 @@ package cn.zjutleo.health_server.controller;
 
 import cn.zjutleo.health_server.annotation.RequestLimit;
 import cn.zjutleo.health_server.annotation.RequiresLogin;
-import cn.zjutleo.health_server.dto.UserDto;
 import cn.zjutleo.health_server.exception.apiException.daoException.SelectException;
 
+import cn.zjutleo.health_server.pojo.User;
 import cn.zjutleo.health_server.service.UserService;
 import cn.zjutleo.health_server.util.ThreadLocalUtil;
-import cn.zjutleo.health_server.vo.PageVo;
 import cn.zjutleo.health_server.vo.ResponseBean;
 import cn.zjutleo.health_server.vo.UserVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author : Qin Zhenghan
@@ -31,17 +29,19 @@ public class UserController {
     /**
      * 更新用户信息
      *
-     * @param userDto
+     * @param user
      * @return
      */
     @RequestLimit
     @RequiresLogin
     @PutMapping("/me")
-    public ResponseBean<Object> updatePersonalUserInfo(@RequestBody UserDto userDto) {
+    public ResponseBean<Object> updatePersonalUserInfo(@RequestBody User user) {
+        // test
+        log.info(user.toString());
         // 获取当前用户线程
         Integer userId = ThreadLocalUtil.getCurrentUser();
         try {
-            userService.updateUserByUserId(userDto, userId);
+            userService.updateUserByUserId(user, userId);
         } catch (SelectException e) {
             e.printStackTrace();
         }

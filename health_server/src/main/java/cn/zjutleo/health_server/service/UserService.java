@@ -1,7 +1,5 @@
 package cn.zjutleo.health_server.service;
 
-import cn.hutool.core.bean.BeanUtil;
-import cn.zjutleo.health_server.dto.UserDto;
 import cn.zjutleo.health_server.exception.apiException.daoException.SelectException;
 import cn.zjutleo.health_server.mapper.UserMapper;
 import cn.zjutleo.health_server.pojo.User;
@@ -84,15 +82,15 @@ public class UserService {
     /**
      * 根据用户id更新用户公有信息
      *
-     * @param userDto
+     * @param user
      * @param userId
      */
-    public void updateUserByUserId(UserDto userDto, Integer userId) throws SelectException {
-        log.info(userDto.toString());
+    public void updateUserByUserId(User user, Integer userId) throws SelectException {
+        // Test
+        log.info(user.toString());
         log.info(String.valueOf(userId));
-        User user = new User();
-        BeanUtils.copyProperties(userDto, user);
-        user.setUId(userId);
+//        BeanUtils.copyProperties(userDto, user);
+//        user.setUId(userId);
         userMapper.updateByUId(user, userId);
     }
 

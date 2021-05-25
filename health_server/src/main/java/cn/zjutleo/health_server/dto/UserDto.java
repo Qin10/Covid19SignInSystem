@@ -126,7 +126,6 @@ public class UserDto {
         this.uAcademy = uAcademy;
     }
 
-
     public String getuMajor() {
         return uMajor;
     }
@@ -169,7 +168,7 @@ public class UserDto {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserDtoTestIO: User{" +
                 "uId=" + uId +
                 ", uNickname='" + uNickname + '\'' +
                 ", uGender=" + uGender +

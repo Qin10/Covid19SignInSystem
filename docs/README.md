@@ -62,19 +62,18 @@
 
 ```json
 {
-	"ucreatedTime": "Date //用户创建时间",
-    "uid": "int //用户id",
-    "utypeId": "int //用户类别（1为普通用户，0为管理员）",
-    "uavatarUrl": "String //用户头像文件保存路径",
-    "ugender": "boolean //用户性别",
-    "utrueName": "String //用户真实姓名",
-    "uclass": "String //用户所在班级",
-    "ustuNum": "String //用户学号",
-    "ugrade": "int //用户年级",
-    "umajor": "String //用户专业",
-    "unickname": "String //用户昵称",
-    "uschool": "String //用户学校",
-    "uacademy": "String //用户学院"
+    "uid": 10001,
+    "utypeId": "0",
+    "uavatarUrl": "/root",
+    "ugender": 1,
+    "utrueName": "秦政瀚",
+    "uclass": "软外1903班",
+    "ustuNum": "201906150312",
+    "ugrade": 2019,
+    "umajor": "软件工程（中外合作）",
+    "unickname": "Patricy",
+    "uschool": "浙江工业大学",
+    "uacademy": "计算机科学与技术学院、软件学院"
 }
 ```
 
