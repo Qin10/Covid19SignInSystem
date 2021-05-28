@@ -6,6 +6,7 @@ import java.util.Map;
 
 import cn.zjutleo.health_server.annotation.RequestLimit;
 import cn.zjutleo.health_server.annotation.RequiresLogin;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ import cn.zjutleo.health_server.pojo.Timecard;
 import cn.zjutleo.health_server.pojo.User;
 import cn.zjutleo.health_server.service.TimecardService;
 import cn.zjutleo.health_server.vo.ResponseBean;
-
+@Slf4j
 @RestController
 public class TimecardController {
     @Autowired
@@ -71,6 +72,7 @@ public class TimecardController {
     @PostMapping(value="/addTimecard")
     public ResponseBean<String> addTimecard(@RequestBody Map<String,Object> map) throws InsertException {
         Integer u_id=(Integer)map.get("u_id");
+        log.info(u_id.toString());
         if(timecardService.getTimecardByIdOnToday(u_id)!=null){
             return new ResponseBean<> (200, "succ", "您已打卡成功，请勿重复打卡") ;
         }else{

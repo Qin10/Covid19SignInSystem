@@ -410,22 +410,17 @@ Content-Type: application/json
     "msg": "succ",
     "data": [
         {
-            "uid": 10001,
-            "ucreatedTime": "2021-05-23T18:55:00.000+0800",
-            "utypeId": 1,
-            "uclass": "软外1903",
-            "uschool": "浙江工业大学",
-            "unickname": "Patricy",
-            "ugender": true,
-            "utrueName": "秦政瀚",
-            "uacademy": "计算机学院",
-            "ugrade": 2019,
-            "uavatarUrl": "/usr",
-            "ustuNum": "201906150312",
-            "umajor": "软件工程（中外合作）"
+            "datetime": "2021-05-27 19:31:17",
+            "province": "浙江省",
+            "city": "杭州市",
+            "county": "西湖区",
+            "detailLocation": null,
+            "temperature": 36.5,
+            "healthcode": "绿码",
+            "uid": 10001
         }
     ],
-    "time": "2021-05-23 20:52:33"
+    "time": "2021-05-27 19:48:44"
 }
 ```
 

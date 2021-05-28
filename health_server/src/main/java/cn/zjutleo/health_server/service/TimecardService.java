@@ -6,6 +6,7 @@ import java.util.List;
 
 import cn.zjutleo.health_server.constants.RedisConstants;
 import cn.zjutleo.health_server.exception.apiException.daoException.InsertException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import cn.zjutleo.health_server.mapper.TimecardMapper;
 import cn.zjutleo.health_server.pojo.SchoolInfo;
 import cn.zjutleo.health_server.pojo.Timecard;
 import cn.zjutleo.health_server.pojo.User;
+@Slf4j
 @Service
 public class TimecardService {
     @Autowired
@@ -57,6 +59,4 @@ public class TimecardService {
         redisService.set(RedisConstants.TIMECARD_CACHE_KEY+timecard.getUId().toString(), timecard);
         timecardMapper.insert(timecard);
     }
-    
-    
 }

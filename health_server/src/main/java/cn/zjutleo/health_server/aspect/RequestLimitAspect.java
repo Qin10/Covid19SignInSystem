@@ -45,7 +45,7 @@ public class RequestLimitAspect {
                 redisService.set(key, 1, requestLimit.time());
             } else {
                 if(currentAmount > requestLimit.amount()){
-                    throw  new RequestTimesExceededException();
+                    throw new RequestTimesExceededException();
                 } else {
                     redisService.incr(key, 1);
                 }
