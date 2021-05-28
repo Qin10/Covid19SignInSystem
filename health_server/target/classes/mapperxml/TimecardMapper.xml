@@ -38,7 +38,7 @@
         <if test="classe!=null">
             and u_class=#{classe}
         </if>
-        and u_id in (select u_id from timecard where to_days(datetime) = to_days(now()))
+        and u_id not in (select u_id from timecard where to_days(datetime)=to_days(now()))
     </select>
 
     <insert id="insert" parameterType="cn.zjutleo.health_server.pojo.SchoolInfo">

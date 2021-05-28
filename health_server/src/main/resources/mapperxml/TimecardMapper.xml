@@ -42,7 +42,7 @@
     </select>
 
     <insert id="insert" parameterType="cn.zjutleo.health_server.pojo.SchoolInfo">
-        insert into timecard (u_id,datetime,province,city,county,detailLocation,temperature,healthcode)
+        insert into timecard (u_id,datetime,province,city,county,detailLocation,temperature,healthcode) 
         values(#{uId},#{datetime},#{province},#{city},#{county},#{detailLocation},#{temperature},#{healthcode})
     </insert>
 </mapper>

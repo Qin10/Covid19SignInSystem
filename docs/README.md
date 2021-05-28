@@ -62,18 +62,19 @@
 
 ```json
 {
-    "uid": 10001,
-    "utypeId": "0",
-    "uavatarUrl": "/root",
-    "ugender": 1,
-    "utrueName": "秦政瀚",
-    "uclass": "软外1903班",
-    "ustuNum": "201906150312",
-    "ugrade": 2019,
-    "umajor": "软件工程（中外合作）",
-    "unickname": "Patricy",
-    "uschool": "浙江工业大学",
-    "uacademy": "计算机科学与技术学院、软件学院"
+	"ucreatedTime": "Date //用户创建时间",
+    "uid": "int //用户id",
+    "utypeId": "int //用户类别（1为普通用户，0为管理员）",
+    "uavatarUrl": "String //用户头像文件保存路径",
+    "ugender": "boolean //用户性别",
+    "utrueName": "String //用户真实姓名",
+    "uclass": "String //用户所在班级",
+    "ustuNum": "String //用户学号",
+    "ugrade": "int //用户年级",
+    "umajor": "String //用户专业",
+    "unickname": "String //用户昵称",
+    "uschool": "String //用户学校",
+    "uacademy": "String //用户学院"
 }
 ```
 
@@ -154,95 +155,7 @@
 }
 ```
 
-## 三、用户管理相关
-
-### 1.获取所有用户列表
-
-*作者：Qin Zhenghan*
-
-**请求URL**
-
-/admin/user `GET`
-
-**URL参数**
-
-```json
-http://localhost:8089/admin/user/?pageNum=1&pageSize=2
-（其中pageNum为页码，pageSize为分页大小）
-```
-
-**返回结果**
-
-```json
-{
-    "code": 200,
-    "msg": "succ",
-    "data": {
-        "pageNum": 1,
-        "pageSize": 1,
-        "pageData": [
-            {
-                "ucreatedTime": "2021-05-23T18:55:00.000+0800",
-                "uid": 10001,
-                "utypeId": 1,
-                "unickname": "Patricy",
-                "uavatarUrl": "/usr",
-                "umajor": "软件工程（中外合作）",
-                "uclass": "软外1903",
-                "ugender": true,
-                "ugrade": 2019,
-                "ustuNum": "201906150312",
-                "uschool": "浙江工业大学",
-                "uacademy": "计算机学院",
-                "utrueName": "秦政瀚"
-            },
-            {
-                "ucreatedTime": "2021-05-23T18:55:00.000+0800",
-                "uid": 10001,
-                "utypeId": 1,
-                "unickname": "Patricy",
-                "uavatarUrl": "/usr",
-                "umajor": "软件工程（中外合作）",
-                "uclass": "软外1903",
-                "ugender": true,
-                "ugrade": 2019,
-                "ustuNum": "201906150312",
-                "uschool": "浙江工业大学",
-                "uacademy": "计算机学院",
-                "utrueName": "秦政瀚"
-            }
-        ]
-    },
-    "time": "2021-05-23 21:53:37"
-}
-```
-
-### 2.根据用户id删除用户
-
-*作者：Qin Zhenghan*
-
-**请求URL**
-
-/admin/user/{userId} `GET`
-
-**URL参数**
-
-```json
-http://localhost:8089/admin/user/10002
-```
-
-**返回结果**
-
-```json
-{
-    "code": 200,
-    "msg": "succ",
-    "data": null,
-    "time": "2021-05-23 22:08:46"
-}
-```
-
-## 四、打卡信息相关
+## 三、打卡信息相关
 
 ### 1.获取某个用户今日打卡信息
 
@@ -252,32 +165,38 @@ http://localhost:8089/admin/user/10002
 
 **请求体**
 
-```json
+```
 POST http://localhost:8089/query/timecardByIdOnToday HTTP/1.1
 Content-Type: application/json
 
 {
-    "u_id": 10001
+    "u_id":15684
 }
 ```
 
 **返回结果**
 
-```json
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 23 May 2021 01:41:42 GMT
+Connection: close
+
 {
-    "code": 200,
-    "msg": "succ",
-    "data": {
-        "datetime": "2021-05-23 20:33:42",
-        "province": "浙江省",
-        "city": "杭州市",
-        "county": "西湖区",
-        "detailLocation": null,
-        "temperature": 36.5,
-        "healthcode": "绿码",
-        "uid": 10001
-    },
-    "time": "2021-05-23 20:41:22"
+  "code": 200,
+  "msg": "succ",
+  "data": {
+    "datetime": "2021-05-23 09:37:32",
+    "province": "青海省",
+    "city": "西宁市",
+    "county": "城东区",
+    "detailLocation": "清真巷街道",
+    "temperature": 37.4,
+    "healthcode": "绿码",
+    "uid": 10005
+  },
+  "time": "2021-05-23 09:41:42"
 }
 ```
 
@@ -289,7 +208,7 @@ Content-Type: application/json
 
 **请求体**
 
-```json
+```
 POST http://localhost:8089/query/timecardsSomeDaysAgoById HTTP/1.1
 Content-Type: application/json
 
@@ -301,33 +220,39 @@ Content-Type: application/json
 
 **返回结果**
 
-```json
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 23 May 2021 01:43:07 GMT
+Connection: close
+
 {
-    "code": 200,
-    "msg": "succ",
-    "data": [
-        {
-            "datetime": "2021-05-23 20:33:43",
-            "province": "浙江省",
-            "city": "杭州市",
-            "county": "西湖区",
-            "detailLocation": null,
-            "temperature": 36.5,
-            "healthcode": "绿码",
-            "uid": 10001
-        },
-        {
-            "datetime": "2021-05-18 19:50:46",
-            "province": "浙江省",
-            "city": "温州市",
-            "county": "鹿城区",
-            "detailLocation": null,
-            "temperature": 37.5,
-            "healthcode": "绿码",
-            "uid": 10001
-        }
-    ],
-    "time": "2021-05-23 20:45:20"
+  "code": 200,
+  "msg": "succ",
+  "data": [
+    {
+      "datetime": "2021-05-17 07:22:14",
+      "province": "浙江省",
+      "city": "杭州市",
+      "county": "西湖区",
+      "detailLocation": null,
+      "temperature": 36.4,
+      "healthcode": "绿码",
+      "uid": 10001
+    },
+    {
+      "datetime": "2021-05-18 19:50:46",
+      "province": "浙江省",
+      "city": "温州市",
+      "county": "鹿城区",
+      "detailLocation": null,
+      "temperature": 37.5,
+      "healthcode": "绿码",
+      "uid": 10001
+    }
+  ],
+  "time": "2021-05-23 09:43:07"
 }
 ```
 
@@ -339,7 +264,7 @@ Content-Type: application/json
 
 **请求体**
 
-```json
+```
 POST http://localhost:8089/query/usersNotSignInOnToday HTTP/1.1
 Content-Type: application/json
 
@@ -354,29 +279,66 @@ Content-Type: application/json
 
 **返回结果**
 
-```json
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 23 May 2021 01:51:30 GMT
+Connection: close
+
 {
-    "code": 200,
-    "msg": "succ",
-    "data": [
-        {
-            "utypeId": 0,
-            "ucreatedTime": "2021-05-17T08:06:38.000+0800",
-            "uid": 15684,
-            "unickname": "Judy",
-            "umajor": "软件工程（中外合作）",
-            "ugrade": 2019,
-            "uclass": "软外1902班",
-            "ugender": false,
-            "uschool": "浙江工业大学",
-            "uacademy": "计算机",
-            "ustuNum": "201930615588",
-            "utrueName": "小强",
-            "uavatarUrl": null
-      }
-    ],
-    "time": "2021-05-23 20:49:36"
+  "code": 200,
+  "msg": "succ",
+  "data": [
+    {
+      "ucreatedTime": "2021-05-17T08:06:38.000+0800",
+      "utypeId": 0,
+      "uid": 15684,
+      "ustuNum": "201930615588",
+      "uschool": "浙江工业大学",
+      "unickname": "Judy",
+      "ugender": false,
+      "utrueName": "小强",
+      "ugrade": 2019,
+      "uclass": "软外1902班",
+      "uavatarUrl": null,
+      "umajor": "软件工程（中外合作）",
+      "uacademy": "计算机"
+    },
+    {
+      "ucreatedTime": "2021-05-17T08:06:38.000+0800",
+      "utypeId": 0,
+      "uid": 15986,
+      "ustuNum": "201906464865",
+      "uschool": "浙江工业大学",
+      "unickname": "Joey",
+      "ugender": true,
+      "utrueName": "李四",
+      "ugrade": 2019,
+      "uclass": "软外1902班",
+      "uavatarUrl": null,
+      "umajor": "软件工程（中外合作）",
+      "uacademy": "计算机"
+    },
+    {
+      "ucreatedTime": "2021-05-11T08:06:38.000+0800",
+      "utypeId": 0,
+      "uid": 28688,
+      "ustuNum": "201906548897",
+      "uschool": "浙江工业大学",
+      "unickname": "Amy",
+      "ugender": false,
+      "utrueName": "小艾",
+      "ugrade": 2019,
+      "uclass": "软外1902班",
+      "uavatarUrl": null,
+      "umajor": "软件工程（中外合作）",
+      "uacademy": "计算机"
+    }
+  ],
+  "time": "2021-05-23 09:51:30"
 }
+
 ```
 
 ### 4.获取今日的打卡信息（管理员）
@@ -393,11 +355,13 @@ Content-Type: application/json
 
 {
     "school":"浙江工业大学",
-    "academy":"计算机学院",
+    "academy":"计算机",
     "major":"软件工程（中外合作）",
     "grade":2019,
-    "classe":"软外1903"
+    "classe":"软外1902班"
 }
+
+
 ```
 
 请求体中必须要有school项，其他可无。
@@ -405,22 +369,28 @@ Content-Type: application/json
 **返回结果**
 
 ```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 23 May 2021 02:02:02 GMT
+Connection: close
+
 {
-    "code": 200,
-    "msg": "succ",
-    "data": [
-        {
-            "datetime": "2021-05-27 19:31:17",
-            "province": "浙江省",
-            "city": "杭州市",
-            "county": "西湖区",
-            "detailLocation": null,
-            "temperature": 36.5,
-            "healthcode": "绿码",
-            "uid": 10001
-        }
-    ],
-    "time": "2021-05-27 19:48:44"
+  "code": 200,
+  "msg": "succ",
+  "data": [
+    {
+      "datetime": "2021-05-23 10:01:55",
+      "province": "青海省",
+      "city": "西宁市",
+      "county": "城东区",
+      "detailLocation": "清真巷街道",
+      "temperature": 37.4,
+      "healthcode": "绿码",
+      "uid": 28688
+    }
+  ],
+  "time": "2021-05-23 10:02:02"
 }
 ```
 
@@ -437,14 +407,15 @@ POST http://localhost:8089/addTimecard HTTP/1.1
 Content-Type: application/json
 
 {
-    "u_id":15684,
-    "province":"山东省",
-    "city":"青岛市",
-    "county":"崂山区",
-    "detailLocaiton":"沙子口街道",
-    "temperature":37.5,
+    "u_id":10003,
+    "province":"青海省",
+    "city":"西宁市",
+    "county":"城东区",
+    "detailLocation":"清真巷街道",
+    "temperature":37.4,
     "healthcode":"绿码"
 }
+
 ```
 
 **返回结果**
@@ -452,22 +423,51 @@ Content-Type: application/json
 每天的首次打卡
 
 ```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 23 May 2021 01:54:56 GMT
+Connection: close
+
 {
-    "code": 200,
-    "msg": "succ",
-    "data": "打卡成功",
-    "time": "2021-05-23 20:36:20"
+  "code": 200,
+  "msg": "succ",
+  "data": "打卡成功",
+  "time": "2021-05-23 09:54:56"
 }
 ```
 
 每天的重复打卡
 
 ```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 23 May 2021 01:56:05 GMT
+Connection: close
+
 {
-    "code": 200,
-    "msg": "succ",
-    "data": "您已打卡成功，请勿重复打卡",
-    "time": "2021-05-23 20:36:20"
+  "code": 200,
+  "msg": "succ",
+  "data": "您已打卡成功，请勿重复打卡",
+  "time": "2021-05-23 09:56:05"
 }
 ```
 
+每天的首次打卡但是用户id不正确
+
+```
+
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 23 May 2021 02:14:16 GMT
+Connection: close
+
+{
+  "code": 200,
+  "msg": "succ",
+  "data": "打卡失败，用户id可能不存在",
+  "time": "2021-05-23 10:14:16"
+}
+```
