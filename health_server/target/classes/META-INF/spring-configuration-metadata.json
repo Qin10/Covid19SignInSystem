@@ -20,12 +20,14 @@
     {
       "name": "jwt-config.expire-time",
       "type": "java.lang.Integer",
-      "sourceType": "cn.zjutleo.health_server.config.JwtConfig"
+      "sourceType": "cn.zjutleo.health_server.config.JwtConfig",
+      "defaultValue": 0
     },
     {
       "name": "jwt-config.refresh-token-expire-time",
       "type": "java.lang.Integer",
-      "sourceType": "cn.zjutleo.health_server.config.JwtConfig"
+      "sourceType": "cn.zjutleo.health_server.config.JwtConfig",
+      "defaultValue": 0
     },
     {
       "name": "jwt-config.secret",

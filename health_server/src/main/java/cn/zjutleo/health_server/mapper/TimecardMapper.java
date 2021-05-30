@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
 import cn.zjutleo.health_server.pojo.SchoolInfo;
 import cn.zjutleo.health_server.pojo.Timecard;
 import cn.zjutleo.health_server.pojo.User;
-import io.lettuce.core.dynamic.annotation.Param;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface TimecardMapper {

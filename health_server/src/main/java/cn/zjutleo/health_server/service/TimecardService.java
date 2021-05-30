@@ -3,6 +3,7 @@ package cn.zjutleo.health_server.service;
 
 import java.util.List;
 
+import cn.zjutleo.health_server.constants.RedisConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class TimecardService {
 
     //根据ID获取用户今日打卡信息
     public Timecard getTimecardByIdOnToday(Integer u_id){
-        String key="TimecardCache::"+u_id.toString();
+        String key= RedisConstants.TIMECARD_CACHE_KEY +u_id.toString();
         //先在Redis中查询用户打卡信息
         Timecard timecard =(Timecard)redisService.get(key);
         if(timecard==null){
@@ -55,7 +56,7 @@ public class TimecardService {
     public void insert(Timecard timecard) throws InsertException{
         try{
             timecardMapper.insert(timecard);
-            redisService.set("TimecardCache::"+timecard.getUId().toString(), timecard);
+            redisService.set(RedisConstants.TIMECARD_CACHE_KEY+timecard.getUId().toString(), timecard);
         }catch(Exception e){
             throw new InsertException();
         }
