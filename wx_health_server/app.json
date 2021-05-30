@@ -1,14 +1,29 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/selfInfor/selfInfor",
+    "pages/CheckPose/CheckPage",
+    "pages/showResult/showResult",
+    "pages/logs/logs",
+    "pages/mainPage/mainPage",
+    "pages/refferingUs/refferingUs",
+    "pages/submit/submit"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于考勤位置信息展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#769",
+    "navigationBarTitleText": "考勤打卡系统",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true,
+    "kbone": true
+  }
 }

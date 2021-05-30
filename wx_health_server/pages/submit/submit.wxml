@@ -1,0 +1,24 @@
+<!--pages/submit/submit.wxml-->
+<view class = "back">
+  <view class="register">
+    <view class = "inbox">
+      <label class="labal">今日体温：</label>
+      <input bindinput="setTemperature" placeholder="℃"/>
+    </view>
+    <view class = "inbox">
+      <label class="labal">健康码：</label>
+      <view class="page-body">
+        <view class="page-section">
+          <view class="page-section-title"></view>
+            <label class="radio">
+              <radio value="r1" bindtap="setGreen" checked="{{green}}"/> 绿码
+            </label>
+            <label class="radio">
+              <radio bindtap="setRed" checked="{{red}}" value="r2" />红码
+             </label>
+          </view>
+        </view>
+    </view>
+    <button bindtap="submit">确定打卡</button>
+  </view>
+</view>

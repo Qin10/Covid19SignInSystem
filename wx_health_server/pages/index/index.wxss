@@ -6,6 +6,11 @@
   color: #aaa;
 }
 
+.selfIntroBox{
+  color:#769;
+  background:#769;
+}
+
 .userinfo-avatar {
   overflow: hidden;
   width: 128rpx;
@@ -13,7 +18,17 @@
   margin: 20rpx;
   border-radius: 50%;
 }
-
-.usermotto {
-  margin-top: 200px;
+.formOne{
+  margin-top:100px;
 }
+
+.registerFrom{
+  margin-top: 100px;
+  padding-top: 20px;
+  align-items: center;
+}
+.usermotto {
+
+  margin-top: 100px;
+}
+

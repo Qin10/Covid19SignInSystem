@@ -1,0 +1,15 @@
+<!--pages/showResult/showResult.wxml-->
+<scroll-view scroll-x style="width: 100%">
+<div class="su-table-box">
+   <view class="strataTable">
+	<!-- 表格标题 -->
+	<view class="su-tr">
+		<view class="su-th" wx:for="{{tableHeader}}" wx:key="{{tableHeader[index]}}">{{tableHeader[index]}}</view>
+	</view>
+	<!-- 表格内容 -->
+	<view class="su-tr" wx:for="{{tableStrata}}" >
+	    <view class="su-td" wx:for="{{item}}" >{{item}}</view>
+	</view>
+  </view>
+</div>
+</scroll-view>

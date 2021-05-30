@@ -1,0 +1,22 @@
+/* pages/submit/submit.wxss */
+.register{
+  background-color:  rgb(189, 194, 189);
+  margin-top: 30%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+input{
+  width: 45%;
+}
+
+.inbox{
+  display:flex;
+  margin:10px 10px 0 20px;
+  flex-direction: row;
+  justify-content: start;
+}

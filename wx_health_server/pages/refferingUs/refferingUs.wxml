@@ -1,0 +1,14 @@
+<!--pages/refferingUs.wxml-->
+<view class="guanyu">
+ <view style="font-family:楷体;font-size:25px">关于我们</view>
+ <view style="font-family:楷体;font-size:12px">
+  <view>◆小组成员：秦政瀚，戈梓闻，叶凯玮，郑锴，张玉凡</view>
+  <view>◆前端：戈梓闻，郑锴，张玉凡</view>
+  <view>◆后端：秦政瀚，叶凯玮</view>
+  <view >该小程序是碎片化、一站式、一体化校园移动门户，适用于一切需要打卡的企业或公司，集登录，注册，打卡等功能于一身。</view>
+  <view>该小程序有更好用的打卡系统，页面视图清晰明了</view>
+  <view>该小程序有更好用的登陆注册页面，页面功能一目了然</view>
+  <view>该小程序更有...（期待你的发现）</view>
+  <view class="guanyu_ground">小程序</view>
+ </view>
+</view>

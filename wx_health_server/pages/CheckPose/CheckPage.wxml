@@ -1,0 +1,51 @@
+<!--pages/CheckPose/CheckPage.wxml-->
+
+<view class = "slectBox">
+  <button bindtap="left" style="padding: 0;height:30px;width:30px;border-radius:50%">
+    <image style="width: 30px; height:30px" src="/tabbar/leftArrow.png"></image>
+  </button>
+  <text class="title">{{title}}</text>
+  <button bindtap="right" style="padding: 0;height:30px;width:30px;border-radius:50%">
+    <image style="width: 30px; height:30px" src="/tabbar/rightArrow.png"></image>
+  </button>
+</view>
+
+
+<view id="shouCase" class="Show {{MaskView?'show':'hide'}}">
+  <scroll-view scroll-x style="width: 100%">
+    <div class="su-table-box">
+     <view class="strataTable">
+	   <!-- 表格标题 -->
+	     <view class="su-tr">
+		     <view class="su-th" wx:for="{{tableHeader}}" wx:key="{{tableHeader[index]}}">
+           {{tableHeader[index]}}
+          </view>
+       	</view>
+    	<!-- 表格内容 -->
+      	<view class="su-tr" wx:for="{{tableStrata}}" >
+	        <view class="su-td" wx:for="{{item}}" >{{item}}</view>
+      	</view>
+      </view>
+    </div>
+  </scroll-view>
+</view>
+
+
+<view id="shouCase" class="Show {{MaskView?'hide':'show'}}">
+  <scroll-view scroll-x style="width: 100%">
+    <div class="su-table-box">
+     <view class="strataTable">
+	   <!-- 表格标题 -->
+	     <view class="su-tr">
+		     <view class="su-th" wx:for="{{tableHeaderT}}" wx:key="{{tableHeaderT[index]}}">
+           {{tableHeaderT[index]}}
+          </view>
+       	</view>
+    	<!-- 表格内容 -->
+      	<view class="su-tr" wx:for="{{tableStrataT}}" >
+	        <view class="su-td" wx:for="{{item}}" >{{item}}</view>
+      	</view>
+      </view>
+    </div>
+  </scroll-view>
+</view>

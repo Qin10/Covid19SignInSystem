@@ -1,0 +1,70 @@
+/* pages/CheckPose/CheckPage.wxss */
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.slectBox{
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color:#769
+}
+
+.title{
+  color: white;
+  font-size: 10;
+  font-weight: 700;
+}
+
+.su-table-box {
+  height: 100%;
+  margin: 0rpx 30rpx;
+  overflow-x: auto;
+  padding-bottom: 40rpx;
+}
+
+.strataTable {
+  margin-top: 50rpx;
+  display: table;
+  border-collapse: collapse; /*合并边框*/
+  overflow-x: auto;  /* 宽度不能设置，要完全显示可以用*/
+  word-break: keep-all;   /* 设置不换行*/
+  white-space: nowrap;
+  background-color: #FFFFFF;
+}
+
+.su-tr {
+  display: table-row; /*此元素会作为一个表格行显示（类似 <tr>）*/
+}
+
+.su-th {
+  display: table-cell; /*此元素会作为一个表格单元格显示（类似 <td> 和 <th>）*/
+  width: auto;
+  height: 60rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border: 1rpx solid #DDDDDD;
+  border-bottom: none;
+  background-color: #87CEFA;
+  color: #FFFFFF;
+}
+
+.su-td {
+  padding: 0rpx 30rpx;
+  display: table-cell; /*此元素会作为一个表格单元格显示（类似 <td> 和 <th>）*/
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1rpx solid #DDDDDD;
+}
+
+scroll-view{
+  width: 100%;
+  height: 800px;
+}

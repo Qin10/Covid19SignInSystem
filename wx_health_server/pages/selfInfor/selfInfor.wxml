@@ -1,0 +1,62 @@
+<!--pages/selfInfor/selfInfor.wxml-->
+<view>
+  <view class="register"> 
+    <view class = "inbox">
+      <label class="labal">真实姓名：</label>
+      <input bindinput="setTrueName" value="{{tureName}}" placeholder="真实姓名"/>
+    </view>
+    <view class = "inbox">
+      <view style="margin-top : 10px">
+      <label class="labal">学校：</label>
+      </view>
+      <view class='select_box'>
+      <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index]}}</text>
+        <image class='select_img {{show&&"select_img_rotate"}}' src='/image/gobottom.png'></image>   
+      </view>
+      <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+        <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>
+        {{item}}
+        </text>
+       </view>
+      </view>
+    </view>
+    <view class = "{{range? 'inboxT':'inbox'}}">
+      <label class="labal">学院：</label>
+      <input bindinput="setAca" value="{{aca}}" placeholder="学院"/>
+    </view>
+    <view class = "inbox">
+      <label class="labal">年级：</label>
+      <input bindinput = "setGrade" value="{{grade}}" placeholder="年级"/>
+    </view>
+    <view class = "inbox">
+      <label class="labal">学号：</label>
+      <input bindinput="setSno" value="{{sno}}" placeholder="学号"/>
+    </view>
+    <view class = "inbox">
+      <label class="labal">性别：</label>
+      <view class="page-body">
+        <view class="page-section">
+          <view class="page-section-title"></view>
+            <label class="radio">
+              <radio value="r1" bindtap="checkedO" checked="{{manDe}}"/> 男
+            </label>
+            <label class="radio">
+              <radio bindtap="checkedT" checked="{{woManDe}}" value="r2" />女
+             </label>
+          </view>
+        </view>
+    </view>
+    <view class = "inbox">
+      <label class="labal">专业:</label>
+      <input bindinput="setMajor" value="{{marjor}}" placeholder="用户专业"/>
+    </view>
+    <view class = "inbox">
+      <label class="labal">班级：</label>
+      <input bindinput="setClass" value="{{class}}" placeholder="班级"/>
+    </view>
+  </view>
+    <view class="inbox">
+      <button bindtap="setAgain">确定修改</button>
+    </view>
+</view>
