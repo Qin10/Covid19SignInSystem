@@ -62,7 +62,7 @@ public class TimecardController {
             String city=(String)map.get("city");
             String county=(String) map.get("county");
             String detailLocation=(String) map.get("detailLocation");
-            Float temperature=((Double)map.get("temperature")).floatValue();
+            Float temperature=Float.parseFloat((String) map.get("temperature"));
             String healthcode=(String) map.get("healthcode");
             Timecard timecard = new Timecard(u_id,datetime,province,city,county,detailLocation,temperature,healthcode);
             try{

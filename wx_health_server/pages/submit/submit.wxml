@@ -3,7 +3,8 @@
   <view class="register">
     <view class = "inbox">
       <label class="labal">今日体温：</label>
-      <input bindinput="setTemperature" placeholder="℃"/>
+      <input bindinput="setTemperature" id="inputBox" placeholder="请输入体温"/>
+      <label id="degree">℃</label>
     </view>
     <view class = "inbox">
       <label class="labal">健康码：</label>
@@ -19,6 +20,6 @@
           </view>
         </view>
     </view>
-    <button bindtap="submit">确定打卡</button>
+    <button bindtap="submit"><span id="confirm">确定打卡</span></button>
   </view>
 </view>

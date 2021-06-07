@@ -412,7 +412,7 @@ Content-Type: application/json
     "city":"西宁市",
     "county":"城东区",
     "detailLocation":"清真巷街道",
-    "temperature":37.4,
+    "temperature":“37.4”,
     "healthcode":"绿码"
 }
 
